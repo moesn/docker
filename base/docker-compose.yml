@@ -1,0 +1,80 @@
+version: '2'
+services:
+  weba:
+      build: ./web
+      image: web:1.0.0
+      restart: always
+      expose:
+        - 8080
+  webb:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webc:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webd:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webe:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webf:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webg:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webh:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webi:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  webj:
+        build: ./web
+        image: web:1.0.0
+        restart: always
+        expose:
+          - 8080
+  haproxy:
+        image: haproxy:alpine
+        volumes:
+          - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+        links:
+          - weba
+          - webb
+          - webc
+          - webd
+          - webe
+          - webf
+          - webg
+          - webh
+          - webi
+          - webj
+        ports:
+          - 80:80
+          - 70:70
